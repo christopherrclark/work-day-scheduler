@@ -6,6 +6,6 @@ The goal of this assignment is to create a caledar application that will run in 
 
 ### Here is a link to the final version of the project.
 
-[Click here to see my final project.](https://day.js.org/en/)
+[Click here to see my final project.](https://christopherrclark.github.io/work-day-scheduler/)
 
-![Here is a screen shot of the final project.](./assets/images/05-third-party-apis-homework-demo.gif)
+![Here is a screen shot of the final project.](./assets/images/Screenshot_20230111_084013.png)

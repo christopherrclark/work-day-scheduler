@@ -1,7 +1,54 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(function () {
+$(function (){
+  const rootElement = $('.container-lg')
+  // const timeElms = Array.from(rootElement.chidren())
+  let hourCur = moment().hour()
+  let timeCur = moment().format('hh:mm:ss')
+  let displayToday = moment().format("MMM Do YYYY")
+
+  $('#currentDay').text(displayToday)
+
+  
+  $('.saveBtn').on('click', function (e){
+    const savedDataId = $(this).parent().attr('id')
+    const savedDataText = $(this).prev().val()
+    e.preventDefault()
+   })
+
+  // timeElms.forEach(timeBlock => {
+  //   const elmKey = timeBlock.id
+  //   const elmText = $(stimeBlock).chidren().eq(1)
+  //   const savedData = localStorage.getItem(elmKey)
+  //   console.log(typeof elmText)
+  //   console.log(typeof elmKey)
+  //   // console.log(savedData)
+    
+  //   elmText.text(savedData)
+  // })
+
+// creating a function to compare actual time with calendar time using id's in html  
+function updateHour(){
+  let hourCur = moment().hour();
+  $('.time-block').each(function(){
+    var calenderHour = parseInt($(this).attr("id").split("-")[1]);
+    if (calenderHour < hourCur) {
+      $(this).addClass("past");
+    }else if (calenderHour === hourCur) {
+      $(this).addClass("present");
+    }else {
+      $(this).addClass("future")
+    }
+  })
+};
+
+// calling the function undateHour
+updateHour();
+
+
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
